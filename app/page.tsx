@@ -1,6 +1,9 @@
 import Reveal from "./components/Reveal";
 import Spotlight from "./components/Spotlight";
 
+// Same base path Next uses for assets, so static links resolve under /my-portfolio on Pages.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const skills = [
   { name: "C++", icon: "⚙️" },
   { name: "Python", icon: "🐍" },
@@ -85,7 +88,7 @@ export default function Home() {
               </a>
             ))}
             <a
-              href="/resume.pdf"
+              href={`${basePath}/resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-1.5 text-white hover:border-[var(--color-accent)]/50 hover:bg-white/[0.06] transition"
@@ -129,7 +132,7 @@ export default function Home() {
               View GitHub
             </a>
             <a
-              href="/resume.pdf"
+              href={`${basePath}/resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-white/[0.12] bg-white/[0.03] hover:bg-white/[0.07] text-gray-300 hover:text-white px-6 py-3 rounded-full font-medium transition hover:scale-105"
@@ -291,7 +294,7 @@ export default function Home() {
               Email
             </a>
             <a
-              href="/resume.pdf"
+              href={`${basePath}/resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
